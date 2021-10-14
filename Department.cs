@@ -6,36 +6,42 @@ using System.Threading.Tasks;
 
 namespace HomeworkSkillBoxCollections
 {
-    public abstract class Department
+    public class Department
     {
         #region Поля
-
+        private int? employeesCount;
         #endregion
 
         #region Поля-свойства
-        public abstract string Name { get; set; }
-        public abstract DateTime CreationDate { get; init; }
-        public abstract List<Employee> Employees { get; set; }
-
-        //Кол-во сотрудников (int) усложненне поле. Обявлять через private и при get выводить всех сотрудников.
+        public string Name { get; set; }
+        public DateTime CreationDate { get; init; }
+        public List<Employee> Employees { get; set; }
+        public int EmployeesCount
+            {
+            get { return Employees.Count; }
+            init { employeesCount = value; }
+            }
         #endregion
 
         #region Конструкторы
-        public Department(string Name, DateTime CreationDate, List<Employee> Employees)
+        public Department()
+        {
+        }
+        public Department(string Name, DateTime CreationDate, List<Employee> Employees, int? EmployeesCount)
         {
             this.Name = Name;
             this.CreationDate = CreationDate;
             this.Employees = Employees;
+            this.employeesCount = EmployeesCount;
         }
 
-        public Department()
+        public Department(string Nickname) : this (Nickname, DateTime.Now, new List<Employee>(), null)
         { 
         }
         #endregion
 
         #region Поведение-методы
-        //Добавление департамента
-        //Удаление департамента
+        //Сортировка сотрудников по дву полям (возраст=>оплата труда)
         #endregion
     }
 }

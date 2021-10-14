@@ -12,21 +12,26 @@ namespace HomeworkSkillBoxCollections
 {
     class Program
     {
-        static void SerializeJSON (string path, Employee employee)
+        static void SerializeJSON (string path, Company company)
         {
-            string json = JsonConvert.SerializeObject(employee);
+            var serializerSettings = new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects };
+            string json = JsonConvert.SerializeObject(company, Formatting.Indented, serializerSettings);
             File.WriteAllText(path, json);
         }
 
         static void DeserializeJSON (string path)
         {
-        
+       /*     json = File.ReadAllText();
+            Department = JsonConvert.DeserializeObject<Department>(json);*/
         }
         static void Main(string[] args)
         {
-            Employee employee = new Employee();
+            Company company = new Company("Oasis", new List<Department>());
+            company.AddNewEmployee("Denis", "BA", 23, "JUNIOR_DEP", 500, 1);
+            company.AddNewEmployee("Serg", "Ivanov", 21, "MIDDLE_DEP", 3000, 3);
 
-            SerializeJSON("_test.json", employee);
+
+            SerializeJSON("_test.json", company);
             Console.WriteLine("Hello World!");
         }
     }
