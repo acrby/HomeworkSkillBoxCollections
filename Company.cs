@@ -53,7 +53,6 @@ namespace HomeworkSkillBoxCollections
             else AddNewDepartment(DepartmentName).Employees.Add(new Employee(Surname, Name, Age, DepartmentName, Salary, Projects));
         }
         //Печать таблицы
-        //Сортировка таблицы (по 1му, 2м, 3м критериям(для отдела))
         //Удаление сотрудника
         //Удаление департамента
         #endregion

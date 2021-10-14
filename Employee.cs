@@ -9,6 +9,7 @@ namespace HomeworkSkillBoxCollections
     public class Employee
     {
         #region Поля
+        static int NumOfEmployees;
         #endregion
 
         #region Cвойства
@@ -16,7 +17,7 @@ namespace HomeworkSkillBoxCollections
         public string Name { get; set; }
         public byte Age { get; set; }
         public string DepartmentName { set; get; }
-      //  public byte ID { get; init; }
+        public int ID { get; init; }
         public decimal Salary { get; set; }
         public byte Projects { get; set; }
         #endregion
@@ -24,11 +25,12 @@ namespace HomeworkSkillBoxCollections
         #region Конструкторы
         public Employee(string Surname, string Name, byte Age, string DepartmentName, decimal Salary, byte Projects)
         {
+            NumOfEmployees++;
+            this.ID = NumOfEmployees;
             this.Surname = Surname;
             this.Name = Name;
             this.Age = Age;
             this.DepartmentName = DepartmentName;
-            //this.ID = ID;
             this.Salary = Salary;
             this.Projects = Projects;
         }
