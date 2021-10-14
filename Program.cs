@@ -31,8 +31,6 @@ namespace HomeworkSkillBoxCollections
             company.AddNewEmployee("Serg", "Ivanov", 21, "MIDDLE_DEP", 3000, 3);
             company.AddNewEmployee("Vlad", "Petrov", 30, "JUNIOR_DEP", 3000, 3);
             company.AddNewEmployee("Vladik", "Petrovick", 32, "MIDDLE_DEP", 3000, 3);
-
-
             SerializeJSON("_test.json", company);
             Console.WriteLine("Hello World!");
         }

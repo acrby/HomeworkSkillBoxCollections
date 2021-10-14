@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace HomeworkSkillBoxCollections
 {
-    public class Employee
+    class Employee
     {
         #region Поля
         static int NumOfEmployees;
         #endregion
 
         #region Cвойства
+        public int ID { get; init; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public byte Age { get; set; }
         public string DepartmentName { set; get; }
-        public int ID { get; init; }
         public decimal Salary { get; set; }
         public byte Projects { get; set; }
         #endregion

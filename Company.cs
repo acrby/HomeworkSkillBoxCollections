@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeworkSkillBoxCollections
 {
-    public class Company
+    class Company
     {
         #region Поля
         #endregion

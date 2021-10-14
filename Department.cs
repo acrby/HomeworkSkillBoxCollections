@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeworkSkillBoxCollections
 {
-    public class Department
+    class Department
     {
         #region Поля
         private int? employeesCount;
