@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeworkSkillBoxCollections
 {
-    class Employee
+    public class Employee
     {
         #region Поля
         static int NumOfEmployees;
@@ -14,12 +14,12 @@ namespace HomeworkSkillBoxCollections
 
         #region Cвойства
         public int ID { get; init; }
-        public string Surname { get; set; }
-        public string Name { get; set; }
-        public byte Age { get; set; }
-        public string DepartmentName { set; get; }
-        public decimal Salary { get; set; }
-        public byte Projects { get; set; }
+        public string Surname { get; set; } = null;
+        public string Name { get; set; } = null;
+        public byte Age { get; set; } = 0;
+        public string DepartmentName { set; get; } = null;
+        public decimal Salary { get; set; } = 0;
+        public byte Projects { get; set; } = 0;
         #endregion
 
         #region Конструкторы
@@ -33,6 +33,10 @@ namespace HomeworkSkillBoxCollections
             this.DepartmentName = DepartmentName;
             this.Salary = Salary;
             this.Projects = Projects;
+        }
+
+        public Employee(string Surname, string Name) : this(Surname, Name, default, default, default, default)
+        {
         }
 
         public Employee()

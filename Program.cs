@@ -16,6 +16,7 @@ namespace HomeworkSkillBoxCollections
         {
             var serializerSettings = new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.None };
             string json = JsonConvert.SerializeObject(company, Formatting.Indented, serializerSettings);
+            //string json = JsonConvert.SerializeObject(company);
             File.WriteAllText(path, json);
         }
 
@@ -26,11 +27,12 @@ namespace HomeworkSkillBoxCollections
         }
         static void Main(string[] args)
         {
-            Company company = new Company("Oasis", new List<Department>());
+            Company company = new Company("Oasis");
             company.AddNewEmployee("Denis", "BA", 23, "JUNIOR_DEP", 500, 1);
             company.AddNewEmployee("Serg", "Ivanov", 21, "MIDDLE_DEP", 3000, 3);
             company.AddNewEmployee("Vlad", "Petrov", 30, "JUNIOR_DEP", 3000, 3);
             company.AddNewEmployee("Vladik", "Petrovick", 32, "MIDDLE_DEP", 3000, 3);
+
             SerializeJSON("_test.json", company);
             Console.WriteLine("Hello World!");
         }

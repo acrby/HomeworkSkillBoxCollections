@@ -20,8 +20,14 @@ namespace HomeworkSkillBoxCollections
         public Company(string Name, List<Department> departments)
         {
             this.Name = Name;
-            Departments = departments;
+            this.Departments = departments;
         }
+
+        public Company(string Name) : this (Name, new List<Department>())
+        {
+        }
+
+        
         #endregion
 
         #region Поведение-методы
@@ -34,6 +40,7 @@ namespace HomeworkSkillBoxCollections
 
         public void AddNewEmployee(string Surname, string Name, byte Age, string DepartmentName, decimal Salary, byte Projects)
         {
+            bool depFinded = false;
             if (this.Departments.Count != 0)
             {
                 foreach (var department in this.Departments)
@@ -41,13 +48,13 @@ namespace HomeworkSkillBoxCollections
                     if (department.Name == DepartmentName)
                     {
                         department.Employees.Add(new Employee(Surname, Name, Age, DepartmentName, Salary, Projects));
+                        depFinded = true;
                         break;
                     }
-                    else
-                    {
+                }
+                if (!depFinded)
+                {
                         AddNewDepartment(DepartmentName).Employees.Add(new Employee(Surname, Name, Age, DepartmentName, Salary, Projects));
-                        break;
-                    }
                 }
             }
             else AddNewDepartment(DepartmentName).Employees.Add(new Employee(Surname, Name, Age, DepartmentName, Salary, Projects));
